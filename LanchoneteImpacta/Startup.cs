@@ -1,4 +1,6 @@
 ﻿using LanchoneteImpacta.Context;
+using LanchoneteImpacta.Repositories;
+using LanchoneteImpacta.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace LanchoneteImpacta;
@@ -17,6 +19,10 @@ public class Startup
     {
         services.AddDbContext<AppDbContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<IcategoriaRepository, CategoriaRepository>();
+
         services.AddControllersWithViews();
     }
 
