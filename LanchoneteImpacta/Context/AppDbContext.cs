@@ -10,6 +10,6 @@ namespace LanchoneteImpacta.Context
         }
 
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Lanche> lanches { get; set; }
+        public DbSet<Lanche> Lanches { get; set; }
     }
 }
