@@ -11,7 +11,7 @@ namespace LanchoneteImpacta.Models
             _context = context;
         }
 
-        public string carrinhoCompraId { get; set; }
+        public string CarrinhoCompraId { get; set; }
         public List <CarrinhoCompraItem> CarrinhoCompraItems { get; set; }
 
         public static CarrinhoCompra GetCarrinho (IServiceProvider services)
@@ -26,8 +26,32 @@ namespace LanchoneteImpacta.Models
 
             return new CarrinhoCompra(context)
             {
-                carrinhoCompraId = carrinhoId
+                CarrinhoCompraId = carrinhoId
             };
+        }
+
+        public void AdicionarAoCarrinho(Lanche lanche)
+        {
+            var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(
+                l => l.Lanche.LancheId == lanche.LancheId &&
+                l.CarrinhoCompraId == CarrinhoCompraId);
+
+            if(carrinhoCompraItem == null)
+            {
+                carrinhoCompraItem = new CarrinhoCompraItem
+                {
+                    CarrinhoCompraId = CarrinhoCompraId,
+                    Lanche = lanche,
+                    Quantidade = 1
+                };
+                _context.CarrinhoCompraItens.Add(carrinhoCompraItem);
+            }
+            else
+            {
+                carrinhoCompraItem.Quantidade++;
+            }
+            _context.SaveChanges();
+            
         }
 
     }
