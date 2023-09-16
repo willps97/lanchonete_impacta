@@ -1,16 +1,28 @@
 ﻿using System.Diagnostics;
 using LanchoneteImpacta.Models;
+using LanchoneteImpacta.Repositories.Interfaces;
+using LanchoneteImpacta.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanchoneteImpacta.Controllers
 {
     public class HomeController : Controller
     {
-       
+
+        private readonly ILancheRepository _lancheRepository;
+
+        public HomeController(ILancheRepository lancheRepository)
+        {
+            _lancheRepository = lancheRepository;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                LanchesPreferidos = _lancheRepository.LanchesPreferidos
+            };
+            return View(homeViewModel);
         }
 
 
