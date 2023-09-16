@@ -1,4 +1,5 @@
 ﻿using LanchoneteImpacta.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace LanchoneteImpacta.Models
 {
@@ -54,5 +55,55 @@ namespace LanchoneteImpacta.Models
             
         }
 
+        public int RemoverDoCarrinho(Lanche lanche)
+        {
+            var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(
+                l => l.Lanche.LancheId == lanche.LancheId
+                && l.CarrinhoCompraId == CarrinhoCompraId);
+
+            var quantidadeLocal = 0;
+
+            if(carrinhoCompraItem !=null){
+                if (carrinhoCompraItem.Quantidade > 1)
+                {
+                    carrinhoCompraItem.Quantidade--;
+                    quantidadeLocal = carrinhoCompraItem.Quantidade;
+                }
+                else
+                {
+                    _context.CarrinhoCompraItens.Remove(carrinhoCompraItem);
+                }
+            }
+            _context.SaveChanges();
+            return quantidadeLocal;
+        }
+
+        public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
+        {
+            return CarrinhoCompraItems ?? (CarrinhoCompraItems = _context.CarrinhoCompraItens
+                .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
+                .Include(l => l.Lanche)
+                .ToList());
+        }
+
+        public void LimparCarrinho()
+        {
+            var carrinhoItens = _context.CarrinhoCompraItens
+                .Where(cc =>
+                cc.CarrinhoCompraId == CarrinhoCompraId);
+            _context.CarrinhoCompraItens.RemoveRange(carrinhoItens);
+
+            _context.SaveChanges();
+        }
+
+        public decimal GetCarrinhoCompraTotal()
+        {
+            var total = _context.CarrinhoCompraItens
+                .Where(cc => cc.CarrinhoCompraId == CarrinhoCompraId)
+                .Select(cc => cc.Lanche.Preco * cc.Quantidade).Sum();
+
+            return total;
+        }
     }
+    
 }
