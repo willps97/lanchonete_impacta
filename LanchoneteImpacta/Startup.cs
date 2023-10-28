@@ -3,6 +3,7 @@ using LanchoneteImpacta.Models;
 using LanchoneteImpacta.Repositories;
 using LanchoneteImpacta.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +23,9 @@ public class Startup
     {
         services.AddDbContext<AppDbContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
 
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<IcategoriaRepository, CategoriaRepository>();
@@ -53,6 +57,7 @@ public class Startup
         app.UseRouting();
         app.UseSession();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
