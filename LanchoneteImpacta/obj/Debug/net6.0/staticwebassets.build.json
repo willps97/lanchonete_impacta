@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EZNCRcopOZzHVgla65KuYSDL/l5uj2PapxoOW+qM3so=",
+  "Hash": "gXBJ5gelBFoUzx3lyX/zTuJ991rLAotLXBVnBrTXC9I=",
   "Source": "LanchoneteImpacta",
   "BasePath": "_content/LanchoneteImpacta",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\images\\account.png",
+      "SourceId": "LanchoneteImpacta",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\",
+      "BasePath": "_content/LanchoneteImpacta",
+      "RelativePath": "images/account.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\account.png"
     },
     {
       "Identity": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\images\\Camemburger.jpg",
