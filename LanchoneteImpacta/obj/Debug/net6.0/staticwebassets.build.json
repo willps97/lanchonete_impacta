@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "giL4JXrlEVW8mqC6m86j1aRt9xAp7//f0y/4g745LwQ=",
+  "Hash": "EZNCRcopOZzHVgla65KuYSDL/l5uj2PapxoOW+qM3so=",
   "Source": "LanchoneteImpacta",
   "BasePath": "_content/LanchoneteImpacta",
   "Mode": "Default",
@@ -219,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Misto Quente.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\images\\password.png",
+      "SourceId": "LanchoneteImpacta",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\",
+      "BasePath": "_content/LanchoneteImpacta",
+      "RelativePath": "images/password.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\password.png"
     },
     {
       "Identity": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\images\\phone-app-icon.png",
