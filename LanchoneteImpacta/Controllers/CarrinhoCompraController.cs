@@ -1,6 +1,7 @@
 ﻿using LanchoneteImpacta.Models;
 using LanchoneteImpacta.Repositories.Interfaces;
 using LanchoneteImpacta.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanchoneteImpacta.Controllers
@@ -29,7 +30,8 @@ namespace LanchoneteImpacta.Controllers
 
             return View(carrinhoCompraVM);
         }
-        
+
+        [Authorize]
         public RedirectToActionResult AdicionarItemNoCarrinhoCompra(int LancheId)
         {
             var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(x => x.LancheId == LancheId);
@@ -41,7 +43,8 @@ namespace LanchoneteImpacta.Controllers
 
             return RedirectToAction("Index");
         }
-        
+
+        [Authorize]
         public IActionResult RemoverItemDoCarrinhoCompra(int lancheId)
         {
             var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(l => l.LancheId == lancheId);

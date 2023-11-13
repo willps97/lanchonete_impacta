@@ -1,6 +1,7 @@
 ﻿using LanchoneteImpacta.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LanchoneteImpacta.Controllers
 {
@@ -71,6 +72,15 @@ namespace LanchoneteImpacta.Controllers
                 }
             }
             return View(registroVM);
+        }
+
+        [HttpPost]
+        public async Task <IActionResult> Logout()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.User = null;
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

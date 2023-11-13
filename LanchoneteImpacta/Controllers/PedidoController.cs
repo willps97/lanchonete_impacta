@@ -1,5 +1,6 @@
 ﻿using LanchoneteImpacta.Models;
 using LanchoneteImpacta.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LanchoneteImpacta.Controllers
@@ -15,11 +16,14 @@ namespace LanchoneteImpacta.Controllers
             _carrinhoCompra = carrinhoCompra;
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Checkout() 
         { 
             return View(); 
         }
+
+        [Authorize]
         [HttpPost]
         public IActionResult Checkout(Pedido pedido)
         {
