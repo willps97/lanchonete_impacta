@@ -2,6 +2,7 @@
 using LanchoneteImpacta.Models;
 using LanchoneteImpacta.Repositories;
 using LanchoneteImpacta.Repositories.Interfaces;
+using LanchoneteImpacta.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,17 @@ public class Startup
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<IcategoriaRepository, CategoriaRepository>();
         services.AddTransient<IPedidoRepository, PedidoRepository>();
+        services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
+
+        services.AddAuthorization(opt =>
+        {
+            opt.AddPolicy("Admin",
+              policy =>
+              {
+                  policy.RequireRole("Admin");
+              });
+        });
+
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped(x => CarrinhoCompra.GetCarrinho(x));
 
@@ -39,7 +51,7 @@ public class Startup
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ISeedUserRoleInitial seedUserRoleInitial)
     {
         if (env.IsDevelopment())
         {
@@ -55,6 +67,9 @@ public class Startup
         app.UseStaticFiles();
 
         app.UseRouting();
+        seedUserRoleInitial.SeedRoles();
+        seedUserRoleInitial.SeedUsers();
+
         app.UseSession();
 
         app.UseAuthentication();
