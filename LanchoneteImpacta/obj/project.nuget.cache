@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bYBn40PWSxXLllFWd9Frl/klDsQzqRl/UhBccxWiLxsuacbeoLOUlEfTJEhQvYq0Bn/qnRfEHWTt03YQtPcFJw==",
+  "dgSpecHash": "GalEx6UBDIhcsAnsp5QVmUpKbeqY/OmJuC+THYEAzZ1IRyKgepMLilW3qiLpSI9MHIIo6RRPI360uzBEl5ZkWA==",
   "success": true,
   "projectFilePath": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\LanchoneteImpacta.csproj",
   "expectedPackageFiles": [
@@ -84,7 +84,7 @@
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.24\\microsoft.entityframeworkcore.analyzers.6.0.24.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.21\\microsoft.entityframeworkcore.design.6.0.21.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.24\\microsoft.entityframeworkcore.relational.6.0.24.nupkg.sha512",
-    "C:\\Users\\willi\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.21\\microsoft.entityframeworkcore.sqlserver.6.0.21.nupkg.sha512",
+    "C:\\Users\\willi\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.23\\microsoft.entityframeworkcore.sqlserver.6.0.23.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.21\\microsoft.entityframeworkcore.tools.6.0.21.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\willi\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",

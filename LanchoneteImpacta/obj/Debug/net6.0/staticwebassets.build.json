@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OvVABSrbQVq9yQZmbKpBsgkFNV75MiWL41CwZ+Y89C0=",
+  "Hash": "qeUt0fFDb7vis/rUcr9CDQaT6vh+Zutt61z0KjwsKOc=",
   "Source": "LanchoneteImpacta",
   "BasePath": "_content/LanchoneteImpacta",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\cart 1616.png"
+    },
+    {
+      "Identity": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\images\\cv-rejected.png",
+      "SourceId": "LanchoneteImpacta",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\",
+      "BasePath": "_content/LanchoneteImpacta",
+      "RelativePath": "images/cv-rejected.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cv-rejected.png"
     },
     {
       "Identity": "C:\\Users\\willi\\Desktop\\Lanchonete_Impacta\\LanchoneteImpacta\\LanchoneteImpacta\\wwwroot\\images\\Envelope-icon24.png",
